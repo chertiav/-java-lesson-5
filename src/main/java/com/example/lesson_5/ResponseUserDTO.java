@@ -1,8 +1,10 @@
 package com.example.lesson_5;
 
+import lombok.Data;
+
 import java.util.Objects;
 import java.util.UUID;
-
+@Data
 public class ResponseUserDTO extends CreateUserDTO{
     private UUID id;
 
@@ -15,32 +17,4 @@ public class ResponseUserDTO extends CreateUserDTO{
         super();;
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        ResponseUserDTO that = (ResponseUserDTO) o;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), id);
-    }
-
-    @Override
-    public String toString() {
-        return "PublicUserDTO{" +
-                "id=" + id +
-                '}';
-    }
 }
